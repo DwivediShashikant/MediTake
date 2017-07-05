@@ -12,11 +12,7 @@
         android:icon="@drawable/pills"
          />
     <item
-        android:id="@+id/know_symptoms"
-        android:title="Know Symptoms"
-        android:icon="@drawable/cardiogram"/>
-    <item
         android:id="@+id/my_profile"
-        android:icon="@drawable/user"
+        android:icon="@drawable/user_tab"
         android:title="My Profile" />
 </menu>

@@ -34,10 +34,6 @@ public class MainActivity extends AppCompatActivity {
                     FragmentMedicineToday f = new FragmentMedicineToday();
                     getFragmentManager().beginTransaction().replace(R.id.frame,f).commit();
                 }
-                else if(menuItemId == R.id.know_symptoms){
-                    FragmentKnowSymptoms f = new FragmentKnowSymptoms();
-                    getFragmentManager().beginTransaction().replace(R.id.frame,f).commit();
-                }
                 else if(menuItemId == R.id.my_profile){
                     FragmentMyProfile f = new FragmentMyProfile();
                     getFragmentManager().beginTransaction().replace(R.id.frame,f).commit();
@@ -51,8 +47,7 @@ public class MainActivity extends AppCompatActivity {
         });
         mbottomBar.mapColorForTab(0,"#009688");
         mbottomBar.mapColorForTab(1,"#0097a7");
-        mbottomBar.mapColorForTab(2,"#e65100");
-        mbottomBar.mapColorForTab(3,"#ffab00");
+        mbottomBar.mapColorForTab(2,"#ffab00");
 
         BottomBarBadge unread;
         unread = mbottomBar.makeBadgeForTabAt(1,"#f50057",7);
