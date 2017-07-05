@@ -10,5 +10,9 @@
         android:typeface="serif"
         android:textAllCaps="true"
         android:textSize="12sp"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:id="@+id/textView" />
+
+
+
 </RelativeLayout>
