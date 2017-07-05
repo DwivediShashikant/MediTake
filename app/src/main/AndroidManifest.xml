@@ -24,7 +24,22 @@
                 android:name="android.app.searchable"
                 android:resource="@layout/searchable" />
         </activity>
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+
+        <provider
+            android:name=".data.MedicineProvider"
+            android:authorities="com.example.shashikant.penorbit"
+            android:exported="false" />
+
+        <activity
+            android:name=".MedicineEditorActivity"
+            android:label="Add a medicine"
+            android:theme="@style/EditorTheme"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
     </application>
 
 </manifest>
