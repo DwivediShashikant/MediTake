@@ -32,7 +32,7 @@ public class FragmentMyProfile extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertMedicine();
+                startActivity( new Intent(getActivity(), MedicineEditorActivity.class));
             }
         });
         return v;
@@ -41,8 +41,7 @@ public class FragmentMyProfile extends Fragment {
 
         ContentValues values = new ContentValues();
         values.put(MedicineEntry.MEDICINE_NAME,"combifalm");
-        values.put(MedicineEntry.MEDICINE_FREQENCY_DAILY,2);
-        values.put(MedicineEntry.MEDICINE_FREQUENCY_WEEKLY,14);
+        values.put(MedicineEntry.MEDICINE_FREQUENCY_TYPE,0);
         values.put(MedicineEntry.MEDICINE_QUANTITY_AT_A_TIME,21);
         values.put(MedicineEntry.MEDICINE_DOSE_PER_DAY,2);
         values.put(MedicineEntry.MEDICINE_REMINDERS,"11:00AM,6:00PM");

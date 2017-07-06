@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import com.example.shashikant.penorbit.data.MedicineContract.MedicineEntry;
 import android.support.annotation.Nullable;
+import android.util.Log;
+
 /**
  * Created by Shashikant on 7/5/2017.
  */
@@ -32,7 +34,22 @@ public class MedicineProvider extends ContentProvider {
     @Nullable
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-        return null;
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+        int match = sUriMatcher.match(uri);
+        Cursor cursor = null;
+        switch (match){
+            case MEDICINES:
+                cursor = db.query(MedicineEntry.TABLE_NAME,projection,selection,selectionArgs,null,null,sortOrder);
+                break;
+            case MEDICINE_ID:
+                selection =  MedicineEntry._ID+"=?";
+                selectionArgs = new String[] {String.valueOf(ContentUris.parseId(uri))} ;
+                cursor = db.query(MedicineEntry.TABLE_NAME,projection,selection,selectionArgs,null,null,sortOrder);
+                break;
+            default:
+                Log.v("","error executing ");
+        }
+        return cursor;
     }
 
     @Nullable
@@ -65,7 +82,35 @@ public class MedicineProvider extends ContentProvider {
 
     @Override
     public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
+        final int match =  sUriMatcher.match(uri);
+        switch(match){
+            case MEDICINES:
+                updateMedcine(uri,values,selection,selectionArgs);
+                break;
+            case MEDICINE_ID:
+                selection = MedicineEntry._ID + "=?";
+                selectionArgs = new String[]{ String.valueOf( ContentUris.parseId(uri))};
+                return updateMedcine( uri, values, selection, selectionArgs);
+            default:
+                try {
+                    throw new IllegalAccessException("update is not supported for the"+uri);
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+        }
         return 0;
+    }
+
+    public int updateMedcine(Uri uri, ContentValues values, String selection, String[]selectionArgs){
+        if (values.size() == 0) {
+            return 0;
+        }
+
+        // Otherwise, get writeable database to update the data
+        SQLiteDatabase database = mDbHelper.getWritableDatabase();
+
+        // Returns the number of database rows affected by the update statement
+        return database.update(MedicineEntry.TABLE_NAME, values, selection, selectionArgs);
     }
     public Uri inserMedicine( Uri uri, ContentValues values){
         SQLiteDatabase db = mDbHelper.getWritableDatabase();

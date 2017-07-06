@@ -21,12 +21,16 @@ public final class MedicineContract {
         public static final String TABLE_NAME = "medicine";
         public static final String _ID = BaseColumns._ID;
         public static final String MEDICINE_NAME = "name";
-        public static final String MEDICINE_FREQENCY_DAILY = "frequency_daily";
-        public static final String MEDICINE_FREQUENCY_WEEKLY = "frequency_weekly";
+        public static final String MEDICINE_FREQUENCY_TYPE = "frequency_type";
         public static final String MEDICINE_QUANTITY_AT_A_TIME = "quantity_at_a_time";
         public static final String MEDICINE_DOSE_PER_DAY = "dose_per_day";
         public static final String MEDICINE_REMINDERS = "reminders";
         public static final String MEDICINE_NO_OF_PURCHASED = "medicine_purchased";
 
+        /**
+         * Possible values for frequency type
+         */
+        public static final int FREQUENCY_DAILY  = 0;
+        public static final int FREQUENCY_WEEKLY = 1;
     }
 }

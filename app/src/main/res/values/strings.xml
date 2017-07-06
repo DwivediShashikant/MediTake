@@ -58,17 +58,22 @@
     
     <string name="med_name">Medicine Name</string>
     
-    <string name="dose_day">Doses/Day</string>
+    <string name="dose_type">Dose Type</string>
     <string name="dose_week">Doses/Week</string>
     <string name="quantity_at_time">Quantity</string>
     <string name="doses_day">Doses/Day</string>
     <string name="reminders">Reminders</string>
     <string name="no_of_purchased_med">Purchased</string>
 
-    <string name="hint_doses_day">Number of Doses/Day</string>
+
     <string name="hint_doses_week">Number of Doses/Week</string>
+    <string name="hint_dose_day">Number Of Doses/Day</string>
     <string name="hint_quantity">Quantity At A Time</string>
     <string name="hint_reminders">Set Reminders</string>
     <string name="hint_purchased">No. Of Medicine Purchased</string>
+
+    <!--option for frequency type-->
+    <string name="frequnecy_daily">Daily</string>
+    <string name="frequnecy_weekly">Weekly</string>
 
 </resources>

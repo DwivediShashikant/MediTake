@@ -3,15 +3,11 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Here see the list of medicines for you"
-        android:typeface="serif"
-        android:textAllCaps="true"
-        android:textSize="12sp"
-        android:layout_centerInParent="true"
-        android:id="@+id/textView" />
+    <ListView
+        android:layout_marginTop="58dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list"></ListView>
 
 
 
