@@ -26,11 +26,6 @@
         </activity>
         <activity android:name=".ProfileActivity" />
 
-        <provider
-            android:name=".data.MedicineProvider"
-            android:authorities="com.example.shashikant.penorbit"
-            android:exported="false" />
-
         <activity
             android:name=".MedicineEditorActivity"
             android:label="Add a medicine"
@@ -39,7 +34,12 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
+
         </activity>
+        <provider
+            android:name=".data."
+            android:authorities="com.example.android.pets"
+            android:exported="false" />
     </application>
 
 </manifest>
